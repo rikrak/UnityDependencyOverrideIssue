@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityDependencyOverrideIssue", "UnityDependencyOverrideIssue\UnityDependencyOverrideIssue.csproj", "{258ED4F4-67FA-44D9-BC0F-368C758DD40D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{258ED4F4-67FA-44D9-BC0F-368C758DD40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258ED4F4-67FA-44D9-BC0F-368C758DD40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258ED4F4-67FA-44D9-BC0F-368C758DD40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258ED4F4-67FA-44D9-BC0F-368C758DD40D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C98CBC49-A7C1-4E2D-A1D6-3AE9D3B51F65}
+	EndGlobalSection
+EndGlobal
