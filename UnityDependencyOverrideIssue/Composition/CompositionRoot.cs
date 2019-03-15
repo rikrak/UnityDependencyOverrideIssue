@@ -30,7 +30,11 @@ namespace UnityDependencyOverrideIssue.Composition
                     new InjectionConstructor(new ResolvedParameter(typeof(IDrillBit)), new ResolvedParameter(typeof(ILayer), "mantle")))
                 .RegisterType<ILayer, Mantle>("mantle", new TransientLifetimeManager(),
                     new InjectionConstructor(new ResolvedParameter(typeof(IDrillBit)), new ResolvedParameter(typeof(ILayer), "core")))
-                .RegisterType<ILayer, Core>("core");
+                .RegisterType<ILayer, Core>("core")
+                .RegisterType<IController, TheController>()
+                .RegisterType<IMessageProvider, DefaultMessageProvider>()
+                .RegisterType<IMessageProvider, AlternativeMessageProvider>(nameof(AlternativeMessageProvider))
+                ;
         }
     }
 }

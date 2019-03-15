@@ -38,6 +38,35 @@ namespace UnityDependencyOverrideIssue
             // assert
             Assert.IsNotNull(actual);
         }
+
+
+        [TestMethod]
+        public void ShouldResolveDefaultImplementation()
+        {
+            // arrange
+            var target = new Composition.CompositionRoot();
+
+            // act
+            var actual = target.Container.Resolve<IController>();
+
+            // assert
+            Assert.AreEqual(actual.GetMessage(), "Hello World");
+        }
+
+        [TestMethod]
+        public void ShouldResolveAlternativeImplementationWhenUsingOverride()
+        {
+            // arrange
+            var target = new Composition.CompositionRoot();
+            var resolvedParameter = new ResolvedParameter<IMessageProvider>( nameof(AlternativeMessageProvider));
+            var dependencyOverride = new DependencyOverride<IMessageProvider>(resolvedParameter);
+
+            // act
+            var actual = target.Container.Resolve<IController>(dependencyOverride);
+
+            // assert
+            Assert.AreEqual(actual.GetMessage(), "Goodbye cruel world!");
+        }
     }
 
 }

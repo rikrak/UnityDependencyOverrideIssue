@@ -2,7 +2,6 @@
 
 namespace UnityDependencyOverrideIssue.Data
 {
-
     public interface ILayer
     {
         void DrillDown();
