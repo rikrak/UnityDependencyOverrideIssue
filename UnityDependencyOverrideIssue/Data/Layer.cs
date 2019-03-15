@@ -2,14 +2,10 @@
 
 namespace UnityDependencyOverrideIssue.Data
 {
+
     public interface ILayer
     {
         void DrillDown();
-    }
-
-    public interface IDrillBit
-    {
-        string Name { get; }
     }
 
     public class Crust : ILayer
@@ -61,20 +57,7 @@ namespace UnityDependencyOverrideIssue.Data
 
         public void DrillDown()
         {
-            Console.WriteLine($"cutting through the Mantle with a {_drillBit.Name}");
+            Console.WriteLine($"cutting through the Core with a {_drillBit.Name}");
         }
-    }
-
-    public class PrimaryDrill : IDrillBit
-    {
-        public string Name => "Primary drill head";
-    }
-    public class SecondaryDrill : IDrillBit
-    {
-        public string Name => "Secondary drill head";
-    }
-    public class TertiaryDrill : IDrillBit
-    {
-        public string Name => "Tertiary drill head";
     }
 }

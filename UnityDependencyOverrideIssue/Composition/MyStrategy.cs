@@ -13,13 +13,6 @@ namespace UnityDependencyOverrideIssue.Composition
 {
     public class MyStrategy : BuilderStrategy
     {
-        private static int _counter = 0;
-
-        public MyStrategy()
-        {
-            
-        }
-
         public override void PreBuildUp(ref BuilderContext context)
         {
             // Get the type that is to be constructed
@@ -29,16 +22,10 @@ namespace UnityDependencyOverrideIssue.Composition
 
             if (IsThereAnotherLayerInHierarchy(context))
             {
-                // so when an instance of IQueryProcessor is requested, provide an instance that is marked as "Nested"
                 var resolvedParameter = new ResolvedParameter<IDrillBit>( CompositionRoot.SecondDrill);
                 var dependencyOverride = new DependencyOverride<IDrillBit>(resolvedParameter);
 
                 AddResolverOverrides(ref context, dependencyOverride);
-            }
-
-            if (++_counter > 50)
-            {
-                throw new FileLoadException("Boom");
             }
         }
 

@@ -23,6 +23,7 @@ namespace UnityDependencyOverrideIssue.Composition
         {
             this._container
                 .AddNewExtension<MyExtension>()
+                .AddNewExtension<Diagnostic>()
                 .RegisterType<IDrillBit, PrimaryDrill>()
                 .RegisterType<IDrillBit, SecondaryDrill>(SecondDrill)
                 .RegisterType<ILayer, Crust>(new TransientLifetimeManager(),
